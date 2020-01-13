@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CHECK REPORT</title>
+</head>
+<body>
+<div>
+    <form method="get" action="check" id="s">
+        {% csrf_token %}
+        <input type="text" placeholder="search..." name="search">
+
+        <button type="submit" onclick="location.href='check?uid={{uid}}'"></button>
+    </form>
+
+</div>
+<H3>HELLO {{name}}</H3>
+{% for time, date, work in comb_list%}
+Date:{{date}} &nbsp; Work:<a href="post_report?z={{time}}">{{work}}</a> <br>
+{% endfor %}
+</body>
+</html>
